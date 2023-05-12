@@ -47,8 +47,7 @@ const addManager = () => {
             name: 'email',
             message: "Please enter the manager's email address.",
             validate: nameInput => {
-                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
-                if (valid) {
+                if (nameInput) {
                     return true;
                 } else {
                     console.log("Please enter a valid email address.")
@@ -110,9 +109,8 @@ const addEmployee = () => {
             type:'input',
             name: 'email',
             message: 'Please enter an email address for this employee',
-            validate: email => {
-                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
-                if (valid) {
+            validate: nameInput => {
+                if (nameInput) {
                     return true;
                 } else {
                     console.log('Please enter a valid email address for this employee')
