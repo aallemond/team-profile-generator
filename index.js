@@ -9,6 +9,7 @@ const inquirer = require('inquirer');
 
 const teamArray = [];
 
+//Inquirer prompts to add a manager
 const addManager = () => {
     return inquirer.prompt ([
         {
@@ -78,5 +79,108 @@ const addManager = () => {
 
         teamArray.push(manager);
         console.log(manager);
+    })
+};
+
+//Inquirer prompts to add employees other than managers
+const addEmployee = () => {
+    return inquirer.prompt([
+        {
+            type: 'list',
+            name: 'role',
+            message: 'Please choose the employees role',
+            choices: ['Engineer', 'Intern']
+        },
+
+        {
+            type: 'input',
+            name: 'name',
+            message:'Please enter the employees name',
+            validate: nameInput => {
+                if(nameInput){
+                    return true;
+                } else {
+                    console.log("Please enter a name for the employee")
+                    return false;
+                }
+            }
+        },
+
+        {
+            type:'input',
+            name: 'email',
+            message: 'Please enter an email address for this employee',
+            validate: email => {
+                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+                if (valid) {
+                    return true;
+                } else {
+                    console.log('Please enter a valid email address for this employee')
+                    return false;
+                }
+            }
+        },
+
+        {
+            type: 'input',
+            name: 'github',
+            message: 'please enter the employees github username',
+            // runs this prompt only when the role of engineer has been selected
+            when: (input) => input.role === 'Engineer',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a github username for this employee')
+
+                }
+
+            }
+
+        },
+
+        {
+            type: 'input',
+            name: 'school',
+            message: 'Please enter the interns school',
+            //runs this prompt only if the role of intern has been selected
+            when: (input) => input.role === 'Intern',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a school for this intern')
+                }
+            }
+        },
+
+        {
+            type: 'confirm',
+            name: 'employeeAddConfirm',
+            message: 'Would you like to add more team members?',
+            default: false
+        }
+    ])
+
+    .then(employeeData => {
+
+        let {name, id, email, role, github, school, employeeAddConfirm } = employeeData;
+        let employee;
+
+        if(role === "Engineer") {
+            employee = new Engineer (name, id, email, github);
+            console.log(employee);
+        } else if (role === "Intern") {
+            employee = new Intern ( name, id, email, school);
+            console.log(employee);
+        }
+
+        teamArray.push(employee);
+
+        if (employeeAddConfirm) {
+            return addEmployee(teamArray);
+        } else {
+            return teamArray;
+        }
     })
 };
