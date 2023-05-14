@@ -59,7 +59,7 @@ const addManager = () => {
 
         {
             type: 'input',
-            name: 'Office Number',
+            name: 'officeNum',
             message: "Please enter the manager's office number.",
             validate: nameInput => {
                 if (isNaN(nameInput)) {
@@ -103,6 +103,21 @@ const addEmployee = () => {
                     return false;
                 }
             }
+        },
+
+        {
+            type: 'input',
+            name: 'id',
+            message: "Please enter this employee's id",
+            validate: nameInput => {
+                if (isNaN(nameInput)) {
+                    console.log("Please enter the employee's id.")
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+
         },
 
         {
