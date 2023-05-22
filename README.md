@@ -17,9 +17,7 @@
   ## Usage
   *See Installation Instructions
 
-  <figure class="video_container">
-  <iframe src="https://drive.google.com/file/d/10EN_2bVIHqjQVhMXSMJdxC3zv8szSwPA/preview" width="640" height="480"></iframe>
-</figure>
+ [![Team Profile Generator](https://res.cloudinary.com/marcomontalbano/image/upload/v1684794628/video_to_markdown/images/google-drive--10EN_2bVIHqjQVhMXSMJdxC3zv8szSwPA-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/10EN_2bVIHqjQVhMXSMJdxC3zv8szSwPA/preview "Team Profile Generator")
   
   ## Contributing
   github.com/aallemond/team-profile-generator
