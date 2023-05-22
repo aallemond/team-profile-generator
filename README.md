@@ -18,10 +18,7 @@
   *See Installation Instructions
 
   <figure class="video_container">
-  <video controls="true" allowfullscreen="true" poster="assets/images/Profile-Pic.png">
-    
-    <source src="/assets/images/Team-Profile-Generator.webm" type="video/webm">
-  </video>
+  <iframe src="https://drive.google.com/file/d/10EN_2bVIHqjQVhMXSMJdxC3zv8szSwPA/preview" width="640" height="480"></iframe>
 </figure>
   
   ## Contributing
