@@ -3,7 +3,7 @@
 }
 
 :root {
-    --primary: lightslategray;
+    --primary: hsl(238, 94%, 34%);
     --secondary: white;
 }
 

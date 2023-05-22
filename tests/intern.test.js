@@ -10,13 +10,13 @@ test('creates an intern object', () => {
 });
 
 test('gets role of employee', () => {
-    const intern = new Intern ('Andrew', 3000, 'allemondandrew@gmail.com', 'LSU');
+    const intern = new Intern ('Andrew', 1234, 'allemondandrew@gmail.com', 'LSU');
 
     expect(intern.getRole()).toEqual("Intern");
 });
 
 test('gets school from intern object using getSchool()', () => {
-    const intern = new Intern ('Andrew', 3000, 'allemondandrew@gmail.com','LSU');
+    const intern = new Intern ('Andrew', 1234, 'allemondandrew@gmail.com','LSU');
 
     expect(intern.getSchool()).toEqual(expect.any(String));
 })
